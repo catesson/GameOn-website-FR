@@ -67,6 +67,10 @@ img {
 .topnav .icon {
   display: none;
 }
+.erreur{
+  padding: 0;
+  color:red;
+}
 
 @media screen and (max-width: 768px) {
   .topnav a {display: none;}
@@ -167,6 +171,32 @@ main {
   width: 100%;
   overflow: auto;
   background-color: rgba(26, 39, 156, 0.4);
+}
+.bground-modal-confirm{
+  display: none;
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 100%;
+  overflow: auto;
+  background-color: rgba(26, 39, 156, 0.4);
+}
+.modal-confirm{
+    position: fixed;
+    left: 25%;
+    top: 47%;
+    height: auto;
+    width: 50%;
+    overflow: auto;
+    background-color: green;
+    border: 2px solid white;
+}
+.modal-confirm p{
+  text-align: center;
+  font-size: 1em;
+  padding: 30px 5px;
 }
 
 .content {
@@ -306,8 +336,21 @@ input[data-error]::after {
   cursor: pointer;
   transform: scale(0.7);
 }
+.close-confirm{
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 32px;
+  height: 32px;
+  opacity: 1;
+  cursor: pointer;
+  transform: scale(0.7);
+}
 .close:before,
-.close:after {
+.close:after,
+.close-confirm:before,
+.close-confirm:after
+ {
   position: absolute;
   left: 15px;
   content: " ";
@@ -315,10 +358,10 @@ input[data-error]::after {
   width: 3px;
   background-color: #fff;
 }
-.close:before {
+.close:before, .close-confirm:before {
   transform: rotate(45deg);
 }
-.close:after {
+.close:after, .close-confirm:after {
   transform: rotate(-45deg);
 }
 .btn-submit,
