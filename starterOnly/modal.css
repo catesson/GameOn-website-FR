@@ -71,6 +71,7 @@ img {
 .topnav .icon {
   display: none;
 }
+/* changement de la couleur de la nav en responsive*/
 .topnav .icon i::before{
   color:red;
 }
@@ -483,6 +484,7 @@ input[data-error]::after {
   height: 100%;
   display: block;
   padding: 0;
+  /*adaptation de l'image pour toutes les taille d'écran*/
   object-fit: cover;
 }
 .copyrights {
@@ -545,6 +547,7 @@ footer {
     float: right;
     display: block;
   }
+  /*repositionnement de la nav en resposive*/
   .main-navbar{
     margin: auto;
     float: none;
@@ -553,7 +556,7 @@ footer {
   .main-navbar a:first-child{
     margin-top: 55px;
   }
-
+  /*mise en place des regle responsive au même moment que les autres*/
   .topnav.responsive {position: relative;}
   .topnav.responsive .icon {
     position: absolute;
@@ -569,14 +572,7 @@ footer {
 
 
 
- /*@media screen and (max-width: 540px) {
-  .topnav a {display: none;}
-  .topnav a.icon {
-    float: right;
-    display: block;
-    margin-top: -15px;
-  }
-} */
+
 @keyframes modalopen {
   from {
     opacity: 0;
