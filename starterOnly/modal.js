@@ -47,10 +47,11 @@ const CGV = document.getElementById("checkbox1");
 const verificationNbCaractere = (input) => {
   // retire les espaces et vérifie qu'il y à au moin 2 caractère
   if (input.value.replaceAll(" ", "").length < 2) {
+    // modiciation du message d'erreur
     input.parentNode.querySelector('.erreur').textContent = "Veuillez entrer 2 caractères ou plus pour le champ du nom.";
     return false;
   }
-
+  // modiciation du message d'erreur
   input.parentNode.querySelector('.erreur').textContent = "";
   return true;
 }
@@ -59,9 +60,11 @@ const verificationNbCaractere = (input) => {
 const verrificationEmail = (input) => {
   //verifie le format Email
   if (/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(input.value)) {
+    // modiciation du message d'erreur
     input.parentNode.querySelector('.erreur').textContent = "";
     return true;
   }
+  // modiciation du message d'erreur
   input.parentNode.querySelector('.erreur').textContent = "Merci de renseigner un Email Valide";
   return false;
 }
@@ -69,9 +72,11 @@ const verrificationEmail = (input) => {
 //verification d'une date de naissance
 function verificationDateNassance(input) {
   if (input.value) {
+    // modiciation du message d'erreur
     input.parentNode.querySelector('.erreur').textContent = "";
     return true;
   }
+  // modiciation du message d'erreur
   input.parentNode.querySelector('.erreur').textContent = "Merci de renseigner une date valide";
   return false;
 }
@@ -80,9 +85,11 @@ function verificationDateNassance(input) {
 function verifInputNbTournois(input) {
   //verifie le format nombre
   if (/\d/.test(input.value)) {
+    // modiciation du message d'erreur
     input.parentNode.querySelector('.erreur').textContent = "";
     return true;
   }
+  // modiciation du message d'erreur
   input.parentNode.querySelector('.erreur').textContent = "Ceci doit être un nombre";
   return false;
 }
@@ -94,12 +101,12 @@ function verificationLieuTournois(input) {
   //verifie qu'une case soit coché
   for (let i = 0; i < nbInput; i++) {
     if (input[i].checked) {
-      // 2 balise après la dernière balise P
+      // modiciation du message d'erreur
       input[nbInput - 1].parentNode.querySelector('.erreur').textContent = "";
       return true;
     }
   }
-  // 2 balise après la dernière balise P
+  // modification du message d'erreur
   input[nbInput - 1].parentNode.querySelector('.erreur').textContent =
     "Pensez à cocher une ville";
   return false;
@@ -108,9 +115,11 @@ function verificationLieuTournois(input) {
 //verification condition générale de vente coché
 function verificationCGV(input) {
   if (input.checked) {
+    // modiciation du message d'erreur
     input.parentNode.querySelector('.erreur').textContent = "";
     return true;
   }
+  // modiciation du message d'erreur
   input.parentNode.querySelector('.erreur').textContent =
     "Merci de cocher les conditions d'utilisation";
   return false;
@@ -140,7 +149,7 @@ document
 
 
 //issue #4
-
+// fermeture de la modale de confirmation d'envoi et remise à zéro des valeur du formulaire
 const closeConfirm = document.querySelector(".close-confirm");
 const modalConfirm = document.querySelector(".bground-modal-confirm");
 closeConfirm.addEventListener("click", function(){
