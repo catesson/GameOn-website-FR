@@ -69,6 +69,7 @@ const verrificationEmail = (input) => {
   return false;
 }
 
+
 //verification d'une date de naissance
 function verificationDateNassance(input) {
   if (input.value) {
@@ -139,12 +140,9 @@ document
       verificationCGV(CGV),
       verificationLieuTournois(radioTournois)];
     if (!check.includes(false)) {
-      console.log("true");
       modalbg.style.display = "none";
       modalConfirm.style.display = "block";
-    } else {
-      console.log("false");
-    }
+    } 
   });
 
 
