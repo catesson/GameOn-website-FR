@@ -46,7 +46,7 @@ const CGV = document.getElementById("checkbox1");
 //Verification non vide et au moin 2 caractère
 const verificationNbCaractere = (input) => {
   // retire les espaces et vérifie qu'il y à au moin 2 caractère
-  if (input.value.replaceAll(" ", "").length < 2) {
+  if (input.value.replaceAll(" ", "").length < 2 || !isNaN(input.value)) {
     // modiciation du message d'erreur
     input.parentNode.querySelector('.erreur').textContent = "Veuillez entrer 2 caractères ou plus pour le champ du nom.";
     return false;
