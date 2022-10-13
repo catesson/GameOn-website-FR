@@ -145,7 +145,7 @@ main {
   font-size: 16px;
 }
 
-.bground {
+.bground, .bground-modal-confirm {
   display: none;
   position: fixed;
   z-index: 1;
@@ -156,34 +156,15 @@ main {
   overflow: auto;
   background-color: rgba(26, 39, 156, 0.4);
 }
-.bground-modal-confirm{
-  display: none;
-  position: fixed;
-  z-index: 1;
-  left: 0;
-  top: 0;
-  height: 100%;
-  width: 100%;
-  overflow: auto;
-  background-color: rgba(26, 39, 156, 0.4);
-}
-.modal-confirm{
-    position: fixed;
-    left: 25%;
-    top: 47%;
-    height: auto;
-    width: 50%;
-    overflow: auto;
-    background-color: green;
-    border: 2px solid white;
-}
+
+
 .modal-confirm p{
   text-align: center;
   font-size: 1em;
   padding: 30px 5px;
 }
 
-.content {
+.content, .modal-confirm{
   margin: 5% auto;
   width: 100%;
   max-width: 500px;
@@ -196,6 +177,14 @@ main {
   color: #fff;
   padding-top: 10px;
 }
+
+.modal-confirm{
+  height: 83vh;
+  display:flex;
+  justify-content: center;
+  align-items: center;
+}
+
 
 .modal-body {
   padding: 15px 8%;
@@ -310,7 +299,7 @@ input[data-error]::after {
   left: 21%;
   top: 19%;
 }
-.close {
+.close, .close-confirm {
   position: absolute;
   right: 15px;
   top: 15px;
@@ -320,15 +309,10 @@ input[data-error]::after {
   cursor: pointer;
   transform: scale(0.7);
 }
-.close-confirm{
-  position: absolute;
-  right: 0;
-  top: 0;
-  width: 32px;
-  height: 32px;
-  opacity: 1;
-  cursor: pointer;
-  transform: scale(0.7);
+
+.modal-confirm .button{
+  position : absolute;
+  bottom: 20px;
 }
 .close:before,
 .close:after,
@@ -515,7 +499,7 @@ footer {
   .hero-content {
     background: #fff;
     color: #000;
-    padding: 20px;
+    padding: 0;
     min-width: 0;
   }
   .hero-content::after {
@@ -525,12 +509,13 @@ footer {
     display: none;
   }
   .hero-headline {
-    font-size: 3rem;
+    font-size: 2.5rem;
     white-space: normal;
   }
   .hero-text {
     width: 100%;
-    font-size: 1.5rem;
+    font-size: 0.55em;
+    margin-top: 20px;
   }
   .hero-img img {
     border-radius: 10px;
@@ -538,11 +523,35 @@ footer {
   }
   .hero-section > .btn-signup {
     display: block;
-    margin: 32px auto 10px;
-    padding: 12px 35px;
+    margin: 10px auto 10px;
+    padding: 10px 35px;
+    width: 141px;
+    height: 31px;
+    font-size: 0.56em;
+  }
+  label{
+    margin-bottom: 5px;
+  }
+  .modal-body{
+    padding : 6px 8%;
+  }
+
+  .content, .modal-confirm{
+    min-height:calc(100vh - 79px);
+    margin-top:79px;
+  }
+  label{
+    font-size: 14px;
+  }
+  .btn-submit {
+    width:141px;
+    height: 31px;
+    font-size: 0.55em;
+    margin-top:5px;
+    padding:0px;
   }
   .copyrights {
-    margin-top: 50px;
+    margin-top: 0px;
     text-align: center;
   }
 

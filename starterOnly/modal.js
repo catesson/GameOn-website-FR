@@ -167,8 +167,14 @@ document
 //issue #4
 // fermeture de la modale de confirmation d'envoi et remise à zéro des valeur du formulaire
 const closeConfirm = document.querySelector(".close-confirm");
+const btnCloseConfirm = document.querySelector("#close-confirm");
+
 const modalConfirm = document.querySelector(".bground-modal-confirm");
 closeConfirm.addEventListener("click", function(){
+  closeModal(modalConfirm);
+  
+});
+btnCloseConfirm.addEventListener("click", function(){
   closeModal(modalConfirm);
   
 });
