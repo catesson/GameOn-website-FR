@@ -82,6 +82,9 @@ img {
   color:red;
   font-size: 10px;
 }
+.erreur-input{
+  border: 2px solid red;
+}
 
 
 

@@ -49,10 +49,12 @@ const verificationNbCaractere = (input) => {
   if (input.value.replaceAll(" ", "").length < 2 || !isNaN(input.value)) {
     // modiciation du message d'erreur
     input.parentNode.querySelector('.erreur').textContent = "Veuillez entrer 2 caractères ou plus pour le champ du nom.";
+    input.className += " erreur-input";
     return false;
   }
   // modiciation du message d'erreur
   input.parentNode.querySelector('.erreur').textContent = "";
+  input.className = "text-control";
   return true;
 }
 
@@ -62,10 +64,12 @@ const verrificationEmail = (input) => {
   if (/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(input.value)) {
     // modiciation du message d'erreur
     input.parentNode.querySelector('.erreur').textContent = "";
+    input.className = "text-control";
     return true;
   }
   // modiciation du message d'erreur
   input.parentNode.querySelector('.erreur').textContent = "Merci de renseigner un Email Valide";
+  input.className += " erreur-input";
   return false;
 }
 
@@ -75,10 +79,12 @@ function verificationDateNassance(input) {
   if (input.value) {
     // modiciation du message d'erreur
     input.parentNode.querySelector('.erreur').textContent = "";
+    input.className = "text-control";
     return true;
   }
   // modiciation du message d'erreur
   input.parentNode.querySelector('.erreur').textContent = "Merci de renseigner une date valide";
+  input.className += " erreur-input"; 
   return false;
 }
 
@@ -88,10 +94,12 @@ function verifInputNbTournois(input) {
   if (/\d/.test(input.value)) {
     // modiciation du message d'erreur
     input.parentNode.querySelector('.erreur').textContent = "";
+    input.className = "text-control";
     return true;
   }
   // modiciation du message d'erreur
   input.parentNode.querySelector('.erreur').textContent = "Ceci doit être un nombre";
+  input.className += " erreur-input";
   return false;
 }
 //verification qu'une case dans le lieu du tournois soit coché
@@ -142,6 +150,14 @@ document
     if (!check.includes(false)) {
       modalbg.style.display = "none";
       modalConfirm.style.display = "block";
+      inputPrenom.value="";
+      inputNom.value="";
+      inputEmail.value="";
+      inputDateNaissance.value="";
+      inputNbTournois.value = "";
+      for (let i = 0; i < radioTournois.length; i++) {
+        radioTournois[i].checked = false;
+      }
     } 
   });
 
@@ -152,12 +168,5 @@ const closeConfirm = document.querySelector(".close-confirm");
 const modalConfirm = document.querySelector(".bground-modal-confirm");
 closeConfirm.addEventListener("click", function(){
   closeModal(modalConfirm);
-  inputPrenom.value="";
-  inputNom.value="";
-  inputEmail.value="";
-  inputDateNaissance.value="";
-  inputNbTournois.value = "";
-  for (let i = 0; i < radioTournois.length; i++) {
-    radioTournois[i].checked = false;
-  }
+  
 });
