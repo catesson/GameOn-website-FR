@@ -91,7 +91,7 @@ function verificationDateNassance(input) {
 //verification que le tournois soit bien un nombre
 function verifInputNbTournois(input) {
   //verifie le format nombre
-  if (/\d/.test(input.value)) {
+  if (!isNaN(input.value) && input.value >= 0) {
     // modiciation du message d'erreur
     input.parentNode.querySelector('.erreur').textContent = "";
     input.className = "text-control";
