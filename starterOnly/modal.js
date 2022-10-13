@@ -45,7 +45,7 @@ const CGV = document.getElementById("checkbox1");
 
 //Verification non vide et au moin 2 caractère
 const verificationNbCaractere = (input) => {
-  // retire les espaces et vérifie qu'il y à au moin 2 caractère
+  // retire les espaces et vérifie qu'il y à au moin 2 caractère et que ce ne soit pas des nombres
   if (input.value.replaceAll(" ", "").length < 2 || !isNaN(input.value)) {
     // modiciation du message d'erreur
     input.parentNode.querySelector('.erreur').textContent = "Veuillez entrer 2 caractères ou plus pour le champ du nom.";
@@ -90,14 +90,16 @@ function verificationDateNassance(input) {
 
 //verification que le tournois soit bien un nombre
 function verifInputNbTournois(input) {
+ 
   //verifie le format nombre
-  if (!isNaN(input.value) && input.value >= 0) {
+  if (!isNaN(input.value) && input.value >= 0 && input.value !="") {
     // modiciation du message d'erreur
     input.parentNode.querySelector('.erreur').textContent = "";
     input.className = "text-control";
     return true;
   }
   // modiciation du message d'erreur
+  
   input.parentNode.querySelector('.erreur').textContent = "Ceci doit être un nombre";
   input.className += " erreur-input";
   return false;
